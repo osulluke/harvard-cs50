@@ -1,9 +1,10 @@
 bool test_cc(long long);
 long long get_credit_card();
 int reduce_10(int);
+int trim(long long);
 
 bool test_cc(long long cc) {
-    bool is_cc;
+    bool is_cc = false;
     int sum = 0;
     int mod = 0;
     int oddsum = 0;
@@ -28,7 +29,10 @@ bool test_cc(long long cc) {
     sum = evensum + oddsum;
     
     printf("sum is %d", sum);
-    is_cc = true;
+    
+    if(sum % 10 == 0) {
+        is_cc = true;
+    }
     
     return is_cc;
 }
@@ -53,4 +57,13 @@ int reduce_10(int num) {
     }
     printf("reduce_10 num returns %d\n", sum);
     return sum;
+}
+
+int trim(long long num) {
+    
+    while (num > 100) {
+        num /= 10;
+    }
+    
+    return num;
 }
