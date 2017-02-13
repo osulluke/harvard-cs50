@@ -9,8 +9,8 @@ int main(void) {
     int slim = trim(cc);
         
     if(test_cc(cc)) {
-        printf("test_cc returned true!\n");
-        printf("slim is %d\n", slim);
+        //printf("test_cc returned true!\n");
+        //printf("slim is %d\n", slim);
         switch(slim) {
             case 34:
             case 37: 
@@ -32,6 +32,7 @@ int main(void) {
             case 43:
             case 42:
             case 41:
+            case 40:
                 printf("VISA\n");
                 break;
         }

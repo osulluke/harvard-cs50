@@ -10,8 +10,8 @@ bool test_cc(long long cc) {
     int oddsum = 0;
     int evensum = 0;
     
-    for (int i = 0; i < 8; i++) {
-        printf("cc is %lld\n", cc);
+    for (int i = 0; i < 10; i++) {
+        //printf("cc is %lld\n", cc);
         
         oddsum += cc % 10;
         
@@ -20,15 +20,16 @@ bool test_cc(long long cc) {
         cc /= 10;
         
         evensum += reduce_10(mod);
-        
+        /*
         printf("mod is %d\n", mod);
         printf("oddsum is %d\n", oddsum);
         printf("evensum is %d\n", evensum);
+        */
     }
     
     sum = evensum + oddsum;
     
-    printf("sum is %d", sum);
+    //printf("sum is %d", sum);
     
     if(sum % 10 == 0) {
         is_cc = true;
@@ -48,14 +49,15 @@ long long get_credit_card() {
 
 int reduce_10(int num) {
     int sum;
-    printf("reduce_10 num is %d; num * 2 is %d\n", num, num*2);
+    //printf("reduce_10 num is %d; num * 2 is %d\n", num, num*2);
     if(num * 2 > 10) {
         sum = ((num * 2) % 10) + ( (num*2) / 10);
     }
     else {
         sum = (num * 2);
     }
-    printf("reduce_10 num returns %d\n", sum);
+    
+    //printf("reduce_10 num returns %d\n", sum);
     return sum;
 }
 
