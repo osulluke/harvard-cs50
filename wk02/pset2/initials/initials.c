@@ -6,27 +6,29 @@
 int main(void) 
 {
     //prompt user for their name:
-    //printf("Please input your name: ");
     string name = get_string();
     
-    //check first character:
+    //check first character and print if not a blank:
     if(name[0] != ' ') 
     {
         printf("%c", toupper(name[0]));
         
     }
     
-    //get first character in each string:
+    //loop through rest of string:
     for (int i = 0, n = strlen(name); i < n; i++)
     {
+        //look at each character and the one tha follows for multiple blanks:
         if(name[i] == ' ' && name[i + 1] != ' ') 
         {
+            //don't print a null value:
             if(name[i+1] != '\0'){
                 printf("%c", toupper(name[i+1]));
             }
         }
     }
     
+    //print final new line
     printf("\n");
     
     //return success:
