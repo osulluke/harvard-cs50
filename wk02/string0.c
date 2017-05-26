@@ -6,10 +6,12 @@ int main(void)
 {
     
     string s = get_string();
-    //spot for potential bug
-    
-    for(int i = 0; i < strlen(s); i++) 
+    //fix bug:
+    if(s != NULL) 
     {
-        printf("%c\n", s[i]);
+        for(int i = 0; i < strlen(s); i++) 
+        {
+            printf("%c\n", s[i]);
+        }
     }
 }
