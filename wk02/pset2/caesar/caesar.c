@@ -26,7 +26,7 @@ int main(int argc, string argv[]) {
 
 string encrypt(string s, int dist) {
     
-    for(int i = 0; i < strlen(s); i++) {
+    for(int i = 0, n = strlen(s); i < n; i++) {
         
         //encrypt lowercase letters
         if( (s[i] >= 'a' && s[i] <= 'z') ) {
