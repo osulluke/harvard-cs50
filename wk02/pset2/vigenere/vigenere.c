@@ -25,10 +25,7 @@ int main(int argc, string argv[])
     {
         if ( (key[i] >= 'a' && key[i] <= 'z') || (key[i] >= 'A' && key[i] <= 'Z') ) 
         {
-            if(key[i] >= 'A' && key[i] <= 'Z')
-            {
-                ;
-            }
+            ;
         }
         else 
         {
@@ -58,8 +55,6 @@ string encrypt(string s, string key)
 
     for(int i = 0; i < len; i++)
     {
-        //s[i] = s[i] + (int) key[i % key_length];
-        
         //encrypt lowercase letters
         if( (s[i] >= 'a' && s[i] <= 'z') ) {
             s[i] -= 'a';
@@ -69,7 +64,7 @@ string encrypt(string s, string key)
         }
         
         //encrypt uppercase letters
-        if( (s[i] >= 'A' && s[i] <= 'Z') ) {
+        else if( (s[i] >= 'A' && s[i] <= 'Z') ) {
             s[i] -= 'A';
             key[i] -= 'A';
             s[i] = ((s[i] + key[ki % key_length]) % 26) + 'A';
